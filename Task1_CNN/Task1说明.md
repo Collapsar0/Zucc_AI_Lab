@@ -2,9 +2,10 @@
 要求理解卷积神经网络（CNN）的基本思想与操作，通过基于Pytorch框架的代码填空加深理解，并实现简单的demo。
 
 ## 参考资料
-1. [Bilibili 台大李宏毅 卷积神经网络讲解 约1小时](https://www.bilibili.com/video/BV1Lb411b7BS?from=search&seid=41737188674805425)
-1. 《神经网络与深度学习》第5章 卷积神经网络
-2. 善用搜索引擎!!!
+1. \*[Bilibili 台大李宏毅 卷积神经网络讲解 约1小时](https://www.bilibili.com/video/BV1Lb411b7BS?from=search&seid=41737188674805425) - 学习CNN基础知识
+2. 《神经网络与深度学习》第5章 卷积神经网络 - 学习CNN基础知识
+3. \*[PyTorch 1.8.1 documentation](https://pytorch.org/docs/stable/index.html) - PyTorch官方文档 用以查询API的参数与函数信息
+4. 善用搜索引擎 - 各种疑难杂症解决
 
 ## 任务
 
