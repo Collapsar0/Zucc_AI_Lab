@@ -118,7 +118,7 @@ def train(cnn):
 			optimizer.zero_grad() # 清空梯度
 			loss.backward() # 反向传播
 			optimizer.step() # 更新权重
-			# 每隔一定轮次输出模型在测试集上的准确率
+			# 每隔一定step输出模型在测试集上的准确率
 			if step != 0 and step % 20 == 0:
 				print("=" * 10, step, "=" * 5, "=" * 5, "test accuracy is ", test(cnn), "=" * 10)
 # --------------------------------------------------------- #
