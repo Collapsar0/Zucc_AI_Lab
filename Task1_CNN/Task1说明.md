@@ -3,7 +3,7 @@
 
 ## 参考资料
 1. 《神经网络与深度学习》第5章 卷积神经网络
-2. 搜索引擎
+2. 善用搜索引擎!!!
 
 ## 任务
 
@@ -12,7 +12,9 @@
     
     首次运行时的超参（learning_rate、keep_prob_rate等）建议按照默认值进行。在得到较高的准确率后可以尝试对超参数进行更改来探索不同参数对模型所造成的影响。
     
-        - 数据集：MINIST数据集
+        - 数据集：MINIST数据集 
+            - 下载方式1：网盘链接：https://pan.baidu.com/s/1xjyY9849eAdTaMKxyHazZg 提取码：thzy 
+            - 下载方式2: 通过代码下载(提供的代码里面已经包含了)
         - 需要掌握的核心知识点：
             - CNN中的基本组件：卷积（包含卷积核尺寸kernel size或patch、padding、stride等参数）、池化
             - 全连接
@@ -24,6 +26,7 @@
             - Mini-batches
     
     2. 利用卷积神经网络，实现对Scratch数据集的图片分类问题。（将先前代码应用到新的数据集中）
+        - 数据集: 网盘链接：https://pan.baidu.com/s/1cTVuPiBhaa_PgW3EMQ8mhg
     3. 自行了解机器学习基础知识
 
 
