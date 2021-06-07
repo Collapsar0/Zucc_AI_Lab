@@ -17,7 +17,7 @@
         - 数据集：MINIST数据集 
             - 下载方式1：网盘链接：https://pan.baidu.com/s/1xjyY9849eAdTaMKxyHazZg 提取码：thzy 
             - 下载方式2: 通过代码下载(提供的代码里面已经包含了)
-        - \*需要掌握的核心知识点：
+        - *需要掌握的核心知识点：
             - CNN中的基本组件：卷积（包含卷积核尺寸kernel size或patch、padding、stride等参数）、池化
             - 全连接
         - 其他可补充知识点：
