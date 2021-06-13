@@ -65,7 +65,7 @@ class CNN(nn.Module):
 		self.conv2 = nn.Sequential(
 			# TODO(convolution function,
 			#  params: 32 in channels; 64 out channels; patch 5*5; stride is 1; padding style is same)
-			# shape(32, 28, 28) -> shape(64, 14, 14)
+			# shape(32, 14, 14) -> shape(64, 14, 14)
 
 
 			# TODO(choosing your activation function)

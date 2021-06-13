@@ -69,7 +69,7 @@ class CNN(nn.Module):
 				kernel_size=5,
 				stride=1,
 				padding=2,
-			),  # shape(32, 28, 28) -> shape(64, 14, 14)
+			),  # shape(32, 14, 14) -> shape(64, 14, 14)
 			nn.ReLU(),  # activation function
 			nn.MaxPool2d(2),  # pooling operation, shape(64, 14, 14) -> shape(64, 7, 7)
 		)
