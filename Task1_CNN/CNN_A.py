@@ -6,21 +6,22 @@
 # @Software: PyCharm
 
 
-import os
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
 import torch.utils.data as Data
 import torchvision
 import torch.nn.functional as F
+from torchsummary import summary
+
 import numpy as np
+import os
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 learning_rate = 1e-4
 keep_prob_rate = 0.7
 max_epoch = 3
 BATCH_SIZE = 50
-
 
 # 如果通过代码直接下载数据集用这段代码
 # mnist_path = './mnist/'
@@ -31,7 +32,6 @@ BATCH_SIZE = 50
 
 # 如果已经把数据集下载到本地了用这段代码，路径自己修改
 mnist_path = 'D:/Workspace/Zucc_AI_Lab_dataset/mnist/'  # 数据集的路径
-
 
 train_data = torchvision.datasets.MNIST(root=mnist_path, train=True, transform=torchvision.transforms.ToTensor(),
 										download=True)  # download必须设置成True,不管之前是不是已经下载好数据集
@@ -122,8 +122,11 @@ if __name__ == '__main__':
 	# print the structure of model
 	print(cnn)
 
-	# print params of model
-	for name, parameter in cnn.named_parameters():
-		print(name, ':', parameter.size())
+	# print the shape of output of each layer
+	print(summary(cnn, (1, 28, 28)))
 
-	train(cnn)
+	# print params of model
+	# for name, parameter in cnn.named_parameters():
+	# 	print(name, ':', parameter.size())
+	#
+	# train(cnn)
