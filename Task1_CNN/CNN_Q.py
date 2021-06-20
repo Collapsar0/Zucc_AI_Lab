@@ -30,7 +30,7 @@ BATCH_SIZE = 50 # 每一个batch的样本数
 #     DOWNLOAD_MNIST = True
 
 # 如果已经把数据集下载到本地了用这段代码，路径自己修改
-mnist_path = 'D:/Workspace/Zucc_AI_Lab_dataset/mnist/'  # 数据集的路径
+mnist_path = './mnist/'  # 数据集的路径
 
 # ------------------------读取数据集------------------------ #
 train_data = torchvision.datasets.MNIST(root=mnist_path, train=True, transform=torchvision.transforms.ToTensor(),
@@ -49,14 +49,15 @@ class CNN(nn.Module):
 		self.conv1 = nn.Sequential(
 			# TODO(convolution fuction,
 			#  params: 1 in channels; 32 out channels; patch 7 * 7; stride is 1;
-			#  padding style is same(that means the convolution opration's input and output have the same size)
+			#  padding style is same(that means the convolution opration's input and output have the same size)  
+			# 为了防止输入与输出的图像像素大小不一致，采用kernel_size大小一半（向下取整），进行边缘0填充
 			# shape(1, 28, 28) -> shape(32, 28, 28)
 			nn.Conv2d(
-				in_channels=,
-				out_channels=,
-				kernel_size=,
-				stride=,
-				padding=,
+				in_channels=1,
+				out_channels=32,
+				kernel_size=7,
+				stride=1,
+				padding=3,
 			),
 			nn.ReLU(),  # activation function
 			nn.MaxPool2d(2),  # pooling operation, shape(32, 28, 28) -> shape(32, 14, 14)
@@ -66,14 +67,20 @@ class CNN(nn.Module):
 			# TODO(convolution function,
 			#  params: 32 in channels; 64 out channels; patch 5*5; stride is 1; padding style is same)
 			# shape(32, 14, 14) -> shape(64, 14, 14)
-
+			nn.Conv2d(
+				in_channels=32,
+				out_channels=64,
+				kernel_size=5,
+				stride=1,
+				padding=2,
+			),
 
 			# TODO(choosing your activation function)
-
+			nn.ReLU(), 
 
 			# TODO(choosing your pooling operation function)
 			# shape(64, 14, 14) -> shape(64, 7, 7)
-
+			nn.MaxPool2d(2),
 		)
 
 		# full connection layer: nn.Linear(in_features, out_features, bias=True)
@@ -84,7 +91,7 @@ class CNN(nn.Module):
 	def forward(self, x): # 此处数据根据定义的结构进行前向传播，return为模型输出
 		x = self.conv1(x)
 		x = self.conv2(x)
-		x = x.view() # TODO(flatten the output of conv2 to (batch_size ,64 * 7 * 7))
+		x = x.view(-1,64 * 7 * 7 ) # TODO(flatten the output of conv2 to (batch_size ,64 * 7 * 7))
 		out1 = self.out1(x)
 		out1 = F.relu(out1)
 		out1 = self.dropout(out1)
